@@ -1,5 +1,12 @@
 # MoveSense Data Collector
 
+## Original Work
+This project is based on the work of [Original Author's Name].
+Original repository: https://github.com/HerraHiekka/MoveSenseDataCollectior
+
+## Modifications
+Included saving the data to output file. Data concatenates to the data previously available.
+
 ## Description
 
 MoveSense Data Collection is a Python-based command-line tool for collecting sensor data from MoveSense devices. It 
@@ -14,9 +21,7 @@ on desktop devices, with ease of connectivity to multiple devices and combining 
 - [Installation](#installation)
 - [Usage](#usage)
 - [Firmware Installation](#firmware-installation)
-- [Contributing](#contributing)
-- [Issues](#issues)
-- [WIP Tasks](#wip-tasks)
+
 
 ## Installation
 
@@ -71,8 +76,9 @@ connected to and paths subscribed to during runtime.
 ## Firmware Installation
 
 For this CLI, the MoveSense devices require the `gatt-sensordata-app` firmware or the `default-firmware` version >=2.3.
+I have used "Movesense-default_firmware-SS2_w_bootloader.zip" 
 
-Official instructions for firmware update can be found here:
+Official instructions for firmware update can be found here (and on the app):
 - [MoveSense Firmware Installation Guide](https://www.movesense.com/docs/test_env/esw/dfu_update/)
 
 The firmware installation requires a phone with the showcase app:
@@ -81,25 +87,3 @@ The firmware installation requires a phone with the showcase app:
 And the firmware zip-file from:
 - [MoveSense Firmware Downloads](https://bitbucket.org/movesense/movesense-device-lib/src/master/samples/bin/release/)
 
-## Contributing
-
-Collaborations appreciated, either via forks and pull-requests, or as direct members to the project. Check the
-issue-list, or add to it for missing features.
-
-## Issues
-
-If you encounter any issues or have suggestions for improvements, please open an issue on the GitHub repository.
-
-Currently, the largest issues are listed below, but basic functionality of the CLI is complete. 
-
-## WIP Tasks
-
-- [ ] (Bug) Async issue on disconnecting all devices, causes a crash on exit.
-- [x] ~~(Bug) Can not change sampling rate of individual devices via MoveSense REST-API. Another path required?~~
-- [x] ~~Due to above, data collection with multiple mismatching framerates not tested.~~
-- [ ] (Feature) Session configs should be made saveable, when edited during runtime.
-- [x] ~~(Refactor) The sensor id's for BLE are currently hard-coded. Different structure would be better.~~
-
-## Contributors
-
-Big thanks to anyone considering helping out with this!
