@@ -1,0 +1,15 @@
+LICENCE.txt
+README.md
+setup.py
+movesense_data_collector.egg-info/PKG-INFO
+movesense_data_collector.egg-info/SOURCES.txt
+movesense_data_collector.egg-info/dependency_links.txt
+movesense_data_collector.egg-info/requires.txt
+movesense_data_collector.egg-info/top_level.txt
+src/__init__.py
+src/cli/__init__.py
+src/cli/movesense_cli.py
+src/movesense/__init__.py
+src/movesense/movesense_device_manager.py
+src/movesense/movesense_manager.py
+src/movesense/movesense_sensor.py

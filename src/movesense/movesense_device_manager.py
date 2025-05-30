@@ -57,13 +57,15 @@ class MovesenseDeviceManager:
 
             logger.info("Session config loaded.")
 
-            self.output_file = config["output"]["filename"]
+            # self.output_file = config["output"]["filename"]
             self.output_path = config["output"]["path"]
         else:
             logger.info("No session config found.")
-            self.output_file = "data_collection.csv"
+            # self.output_file = "data_collection.csv"
             self.output_path = "./"
 
+        # Always use the fixed filename - i.e. overwrite the data each time
+        self.output_file = "data_collection.csv"
         os.makedirs(self.output_path, exist_ok=True)
 
 
@@ -91,6 +93,16 @@ class MovesenseDeviceManager:
         client = BleakClient(device.address)
         await client.connect()
         logger.info(f"Connected to {device.name} ({device.address})")
+       
+        # # Print all services and characteristics
+        # logger.info("Discovering device services and characteristics...")
+        # services = await client.get_services()
+        # for service in services:
+        #     logger.info(f"Service: {service.uuid}")
+        #     for char in service.characteristics:
+        #         logger.info(f"  Characteristic: {char.uuid}")
+        #         logger.info(f"    Properties: {char.properties}")
+       
         connected_device = ConnectedDevice(device, client)
         self.connected_devices.append(connected_device)
         return connected_device
@@ -142,6 +154,33 @@ class MovesenseDeviceManager:
         await device.client.start_notify(NOTIFY_CHARACTERISTIC, lambda sender, data: asyncio.ensure_future(
             device.notification_handler(sender, data)))
 
+    # def end_data_collection(self):
+    #     logger.debug("Disabling notifications.")
+
+    #     for device in self.connected_devices:
+    #         self.run_coroutine_sync(device.client.stop_notify(NOTIFY_CHARACTERISTIC))
+
+    #     # Save the collected data
+    #     data_frame = self.unify_notifications()
+
+    #     # Always save to data_collection.csv, overwriting if it exists
+    #     data_frame.to_csv(os.path.join(self.output_path, self.output_file), index=False)
+    #     logger.info(f"Data saved to {os.path.join(self.output_path, self.output_file)}")
+    #     logger.info("Data collection complete.")
+
+    #     if self.output_file is not None:
+    #         filename, extension = os.path.splitext(self.output_file)
+    #         counter = 1
+    #         while os.path.exists(os.path.join(self.output_path, self.output_file)):
+    #             self.output_file = f"{filename}_{counter}{extension}"
+    #             counter += 1
+    #     else:
+    #         self.output_file = "data_output.csv"
+
+    #     data_frame.to_csv(os.path.join(self.output_path, self.output_file), index=False)
+
+
+    #     logger.info("Data collection complete.")
     def end_data_collection(self):
         logger.debug("Disabling notifications.")
 
@@ -151,18 +190,9 @@ class MovesenseDeviceManager:
         # Save the collected data
         data_frame = self.unify_notifications()
 
-        if self.output_file is not None:
-            filename, extension = os.path.splitext(self.output_file)
-            counter = 1
-            while os.path.exists(os.path.join(self.output_path, self.output_file)):
-                self.output_file = f"{filename}_{counter}{extension}"
-                counter += 1
-        else:
-            self.output_file = "data_output.csv"
-
+        # Always save to data_collection.csv, overwriting if it exists
         data_frame.to_csv(os.path.join(self.output_path, self.output_file), index=False)
-
-
+        logger.info(f"Data saved to {os.path.join(self.output_path, self.output_file)}")
         logger.info("Data collection complete.")
 
 

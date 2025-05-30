@@ -7,6 +7,12 @@ from src.movesense.movesense_device_manager import MovesenseDeviceManager
 
 import logging
 
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='[%(asctime)s] [%(levelname)s]: %(message)s',
+    datefmt='%Y-%m-%d %H:%M:%S'
+)
 logger = logging.getLogger("__main__")
 
 
@@ -193,5 +199,7 @@ class MovesenseCLI:
 
 
 if __name__ == "__main__":
+    print("Starting Movesense CLI...")
     movesense_cli = MovesenseCLI()
+    print("CLI initialized, starting main loop...")
     movesense_cli.run()

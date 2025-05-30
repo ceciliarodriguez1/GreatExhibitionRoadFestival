@@ -1,5 +1,5 @@
 async-timeout==4.0.3
-bleak==0.21.1
+bleak==0.22.3
 contourpy==1.2.0
 cycler==0.12.1
 dbus-fast==2.21.1
