@@ -2,7 +2,7 @@
 
 ## Original Work
 This project is based on the work of Henry Mauranen.
-Original repository: https://github.com/HerraHiekka/MoveSenseDataCollectior
+Original repository:[ https://github.com/HerraHiekka/MoveSenseDataCollectior](https://github.com/HerraHiekka/movesense-data-collector.git)
 
 ## Modifications
 Included saving the data to output file. Data concatenates to the data previously available.
