@@ -1,7 +1,7 @@
 # MoveSense Data Collector
 
 ## Original Work
-This project is based on the work of [Original Author's Name].
+This project is based on the work of Henry Mauranen.
 Original repository: https://github.com/HerraHiekka/MoveSenseDataCollectior
 
 ## Modifications
