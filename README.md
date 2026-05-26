@@ -1,12 +1,4 @@
 # MoveSense Data Collector
-
-## Original Work
-This project is based on the work of Henry Mauranen.
-Original repository:[ https://github.com/HerraHiekka/MoveSenseDataCollectior](https://github.com/HerraHiekka/movesense-data-collector.git)
-
-## Modifications
-Included saving the data to output file. Data concatenates to the data previously available.
-
 ## Description
 
 MoveSense Data Collection is a Python-based command-line tool for collecting sensor data from MoveSense devices. It 
@@ -28,7 +20,7 @@ on desktop devices, with ease of connectivity to multiple devices and combining 
 1. Clone this repository:
 
     ```bash
-    git clone https://github.com/HerraHiekka/MoveSenseDataCollectior.git
+    git clone [https://github.com/HerraHiekka/MoveSenseDataCollectior.git](https://github.com/ceciliarodriguez1/GreatExhibitionRoadFestival.git)
     ```
 
 2. Navigate to the project directory:
