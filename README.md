@@ -20,7 +20,7 @@ on desktop devices, with ease of connectivity to multiple devices and combining 
 1. Clone this repository:
 
     ```bash
-    git clone [https://github.com/HerraHiekka/MoveSenseDataCollectior.git](https://github.com/ceciliarodriguez1/GreatExhibitionRoadFestival.git)
+    git clone https://github.com/ceciliarodriguez1/GreatExhibitionRoadFestival.git
     ```
 
 2. Navigate to the project directory:
