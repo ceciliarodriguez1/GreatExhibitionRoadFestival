@@ -26,13 +26,24 @@ on desktop devices, with ease of connectivity to multiple devices and combining 
 2. Navigate to the project directory:
 
     ```bash
-    cd movesense-data-collector
+    cd GreatExhibitionRoadFestival
     ```
 
 3. Install the required dependencies:
 
     ```bash
-    pip install -r requirements.txt
+    conda create -n GERFvenv python=3.10 -y
+    conda activate GERFvenv
+    pip install -r /rds/general/user/USERNAME/home/GERF/GreatExhibitionRoadFestival/requirements.txt
+    ```
+
+4. Connect to Movesense through CLI
+
+
+5. Run the website
+
+    ```bash
+    streamlit run ../save_timestamp/website.py
     ```
 
 ## Usage
